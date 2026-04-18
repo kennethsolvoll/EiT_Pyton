@@ -23,7 +23,7 @@
 | Framework | Vue 3 (Composition API, `<script setup lang="ts">`) |
 | Language | TypeScript (strict) |
 | Styling | Tailwind CSS, theme extended with project palette |
-| Routing | Vue Router in hash mode, anchor-based smooth scroll |
+| Routing | None — native anchor links + CSS smooth-scroll (single-page scroll SPA, no route changes) |
 | Animations | `@vueuse/motion` for declarative `v-motion` reveal presets |
 | Build | Vite |
 | Package manager | npm |
@@ -51,7 +51,7 @@
 
 - Content capped at `max-w-6xl` inside a centered container, sections full-width with their own background tone.
 - Generous vertical rhythm (`py-24 md:py-32`) between sections to support the editorial feel.
-- `scroll-behavior: smooth` on `<html>`; anchor IDs on each section matching its route hash.
+- `scroll-behavior: smooth` and `scroll-padding-top: 5rem` on `<html>` so anchor jumps land below the sticky navbar.
 
 ## File & Folder Structure
 
@@ -84,9 +84,8 @@ EiT_Pyton/
 │   │   ├── findings.ts           # FindingCard[]
 │   │   ├── personas.ts           # Persona[]
 │   │   ├── team.ts               # TeamMember[]
-│   │   └── comparison.ts         # ComparisonRow[]
-│   ├── router/
-│   │   └── index.ts              # Vue Router, hash mode, scrollBehavior
+│   │   ├── comparison.ts         # ComparisonRow[]
+│   │   └── nav.ts                # NavLink[]
 │   └── types/
 │       └── index.ts              # Persona, TeamMember, FindingCard, ComparisonRow
 └── docs/
@@ -157,7 +156,7 @@ Each component is a self-contained section consuming typed data from `src/data/*
 
 - Content objects are imported statically from `src/data/*.ts` into their matching section components.
 - No global store (no Pinia). There is no shared mutable state.
-- Router exposes hash-based routes (`/#om`, `/#funn`, …) with `scrollBehavior` returning `{ el: to.hash, behavior: 'smooth' }` so browser back/forward and direct-link sharing both work.
+- Navigation is plain `<a href="#om">`-style anchor links. Each section has a matching `id`. Deep links (`site/#team`) work via the browser's native fragment handling. CSS `scroll-padding-top` offsets the sticky navbar so headings aren't hidden underneath.
 
 ## Animation Strategy
 
