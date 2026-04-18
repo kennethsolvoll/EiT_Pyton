@@ -1,0 +1,9 @@
+# Claude Code — per-user session state and local overrides
+# (project-level settings in .claude/settings.json remain tracked)
+.claude.json
+.claude/settings.local.json
+.claude/worktrees/
+
+# OS
+.DS_Store
+Thumbs.db
