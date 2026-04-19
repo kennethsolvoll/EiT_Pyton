@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar.vue'
 import HeroSection from './components/HeroSection.vue'
 import AboutSection from './components/AboutSection.vue'
+import FindingsSection from './components/FindingsSection.vue'
 </script>
 
 <template>
@@ -9,5 +10,6 @@ import AboutSection from './components/AboutSection.vue'
   <main>
     <HeroSection />
     <AboutSection />
+    <FindingsSection />
   </main>
 </template>
