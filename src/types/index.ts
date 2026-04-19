@@ -8,7 +8,7 @@ export interface Persona {
 
 export interface TeamMember {
   name: string
-  role: string
+  role?: string
   avatar: string
 }
 

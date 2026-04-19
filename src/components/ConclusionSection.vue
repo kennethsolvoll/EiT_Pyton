@@ -30,6 +30,7 @@ import { reveal } from '../composables/useReveal'
       </div>
 
       <aside
+        aria-label="Sitatutdrag"
         class="mt-12 border-l-4 border-gold pl-6 md:pl-8 py-4 bg-moss/30 rounded-r-lg max-w-3xl"
       >
         <p class="font-serif text-xl md:text-2xl text-parchment italic">
