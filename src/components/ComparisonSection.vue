@@ -22,6 +22,11 @@ import { reveal } from '../composables/useReveal'
         </p>
       </div>
 
+      <p class="sr-only">
+        Sammenligning av vannforbruk, fôrkonverteringsforhold, arealbruk og CO₂-utslipp
+        per proteinkilde: pyton, storfe, kylling og svin.
+      </p>
+
       <div class="overflow-x-auto">
         <div class="min-w-[640px] space-y-4">
           <div
