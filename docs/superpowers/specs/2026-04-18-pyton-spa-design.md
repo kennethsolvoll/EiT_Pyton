@@ -49,7 +49,7 @@
 
 ### Layout
 
-- Content capped at `max-w-6xl` inside a centered container, sections full-width with their own background tone.
+- Content capped at `max-w-content` (72 rem, a custom token) inside a centered container, sections full-width with their own background tone.
 - Generous vertical rhythm (`py-24 md:py-32`) between sections to support the editorial feel.
 - `scroll-behavior: smooth` and `scroll-padding-top: 5rem` on `<html>` so anchor jumps land below the sticky navbar.
 
