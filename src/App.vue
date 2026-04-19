@@ -6,6 +6,7 @@ import FindingsSection from './components/FindingsSection.vue'
 import PersonasSection from './components/PersonasSection.vue'
 import ComparisonSection from './components/ComparisonSection.vue'
 import ConclusionSection from './components/ConclusionSection.vue'
+import TeamSection from './components/TeamSection.vue'
 </script>
 
 <template>
@@ -17,5 +18,6 @@ import ConclusionSection from './components/ConclusionSection.vue'
     <PersonasSection />
     <ComparisonSection />
     <ConclusionSection />
+    <TeamSection />
   </main>
 </template>
