@@ -1,4 +1,5 @@
 import type { Persona } from '../types'
+import { assetUrl } from '../utils/assetUrl'
 
 export const personas: Persona[] = [
   {
@@ -7,7 +8,7 @@ export const personas: Persona[] = [
     percentage: 60,
     description:
       'Forbinder slanger med reptiler og giftighet. Sosiale normer og følelsesmessig avsky overstyrer miljøargumenter, selv når bærekraftsgevinstene er dokumentert.',
-    avatar: '/images/personas/kari.png',
+    avatar: assetUrl('images/personas/kari.png'),
     quote: '«Slanger er jo ikke mat. Det høres bare ekkelt ut.»',
     traits: [
       'Litt negativ holdning: forbinder slanger med gift og krypdyr',
@@ -26,7 +27,7 @@ export const personas: Persona[] = [
     percentage: 25,
     description:
       'Rasjonell og datadrevet. Åpen for å prøve pytonkjøtt dersom forskning bekrefter at det er mer bærekraftig enn kylling og har sammenlignbar ernæringsprofil.',
-    avatar: '/images/personas/lena.png',
+    avatar: assetUrl('images/personas/lena.png'),
     quote: '«Hvis forskning viser at det er mer bærekraftig enn kylling, vil jeg prøve!»',
     traits: [
       'Nøytral holdning — bestemmer seg på bakgrunn av fakta',
