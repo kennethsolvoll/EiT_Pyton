@@ -26,7 +26,7 @@ import { reveal } from '../composables/useReveal'
           v-motion="reveal(i * 150)"
           :class="[
             'rounded-2xl p-7 border bg-moss/20',
-            i === 1 ? 'border-gold/40' : 'border-moss/50',
+            i === 1 ? 'border-gold/40' : 'border-moss/40',
           ]"
         >
           <!-- Header: avatar + name + segment + percentage -->
@@ -34,7 +34,7 @@ import { reveal } from '../composables/useReveal'
             <img
               :src="persona.avatar"
               :alt="`Profilbilde av ${persona.name}`"
-              class="w-16 h-16 rounded-full object-cover border-2 border-gold/45 flex-shrink-0"
+              class="w-16 h-16 rounded-full object-cover border-2 border-gold/40 flex-shrink-0"
               loading="lazy"
             />
             <div>
