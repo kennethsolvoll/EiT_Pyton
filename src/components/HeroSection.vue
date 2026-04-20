@@ -25,7 +25,7 @@ import { heroEntrance } from '../composables/useReveal'
         NTNU · Eksperter i Team
       </p>
       <h1 class="font-serif text-5xl md:text-7xl lg:text-8xl leading-[1.05] tracking-tight mb-8">
-        Pyton med pyton?
+        Pyton-oppdrett som framtidig bærekraftig proteinkilde
       </h1>
       <p class="font-sans text-lg md:text-xl text-parchment/80 max-w-2xl mb-12 leading-relaxed">
         En studie av pytonslange som bærekraftig proteinkilde i Norge — og hvordan
