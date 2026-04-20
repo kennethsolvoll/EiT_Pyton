@@ -15,7 +15,7 @@ function close() {
   >
     <div class="max-w-content mx-auto flex items-center justify-between px-6 py-4">
       <a href="#" class="font-serif text-xl text-gold tracking-tight">
-        Pyton med pyton?
+        Pytonoppdrett
       </a>
 
       <nav class="hidden md:flex items-center gap-8">
