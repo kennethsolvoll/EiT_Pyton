@@ -19,36 +19,100 @@ import { reveal } from '../composables/useReveal'
         </h2>
       </div>
 
-      <div class="grid md:grid-cols-2 gap-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <article
           v-for="(persona, i) in personas"
           :key="persona.name"
           v-motion="reveal(i * 150)"
-          class="bg-earth/30 border border-earth/60 rounded-2xl p-8 md:p-10"
+          :class="[
+            'rounded-2xl p-7 border bg-moss/20',
+            i === 1 ? 'border-gold/40' : 'border-moss/50',
+          ]"
         >
-          <div class="flex items-center gap-6 mb-6">
+          <!-- Header: avatar + name + segment + percentage -->
+          <div class="flex items-center gap-4 mb-5">
             <img
               :src="persona.avatar"
               :alt="persona.name"
-              class="h-20 w-20 rounded-full object-cover border border-gold/40"
+              class="w-16 h-16 rounded-full object-cover border-2 border-gold/45 flex-shrink-0"
               loading="lazy"
             />
             <div>
-              <h3 class="font-serif text-2xl text-parchment">{{ persona.name }}</h3>
-              <p class="text-parchment/70 font-sans text-sm">{{ persona.segment }}</p>
+              <h3 class="font-serif text-xl text-parchment leading-tight">{{ persona.name }}</h3>
+              <p class="text-gold font-sans text-xs font-semibold mt-0.5">{{ persona.segment }}</p>
+              <p class="text-parchment/55 font-sans text-xs mt-0.5">~{{ persona.percentage }}% av utvalget</p>
             </div>
           </div>
 
-          <div class="flex items-baseline gap-3 mb-6">
-            <span class="font-serif text-6xl text-gold leading-none">
-              {{ persona.percentage }}%
-            </span>
-            <span class="text-parchment/60 font-sans text-sm">av utvalget</span>
-          </div>
+          <!-- Quote -->
+          <blockquote
+            v-if="persona.quote"
+            class="font-serif italic text-parchment/90 text-base leading-relaxed pl-4 border-l-4 border-gold bg-gold/[0.07] rounded-r-lg py-3 pr-4 mb-5"
+          >
+            {{ persona.quote }}
+          </blockquote>
 
-          <p class="text-parchment/80 font-sans leading-relaxed">
-            {{ persona.description }}
-          </p>
+          <hr class="border-moss/35 mb-4" />
+
+          <!-- Kjennetegn -->
+          <template v-if="persona.traits?.length">
+            <p class="uppercase tracking-widest text-xs text-parchment/45 font-sans mb-3">
+              Kjennetegn
+            </p>
+            <ul class="mb-5 space-y-1.5">
+              <li
+                v-for="trait in persona.traits"
+                :key="trait"
+                class="font-sans text-sm text-parchment/80 pl-4 relative leading-snug"
+              >
+                <span class="absolute left-0 top-[5px] text-gold text-[0.45rem]" aria-hidden="true">●</span>
+                {{ trait }}
+              </li>
+            </ul>
+          </template>
+
+          <!-- Scores -->
+          <template v-if="persona.scores">
+            <hr class="border-moss/35 mb-4" />
+            <div class="space-y-3">
+              <div class="flex flex-col gap-1.5">
+                <div class="flex justify-between font-sans text-xs text-parchment/55">
+                  <span>Åpenhet for nytt</span>
+                  <span>{{ persona.scores.openness }} %</span>
+                </div>
+                <div class="h-1.5 bg-parchment/10 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gold rounded-full"
+                    :style="{ width: persona.scores.openness + '%' }"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex justify-between font-sans text-xs text-parchment/55">
+                  <span>Bærekraft-fokus</span>
+                  <span>{{ persona.scores.sustainability }} %</span>
+                </div>
+                <div class="h-1.5 bg-parchment/10 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gold rounded-full"
+                    :style="{ width: persona.scores.sustainability + '%' }"
+                  />
+                </div>
+              </div>
+              <div class="flex flex-col gap-1.5">
+                <div class="flex justify-between font-sans text-xs text-parchment/55">
+                  <span>Endringspotensial</span>
+                  <span>{{ persona.scores.changeReadiness }} %</span>
+                </div>
+                <div class="h-1.5 bg-parchment/10 rounded-full overflow-hidden">
+                  <div
+                    class="h-full bg-gold rounded-full"
+                    :style="{ width: persona.scores.changeReadiness + '%' }"
+                  />
+                </div>
+              </div>
+            </div>
+          </template>
         </article>
       </div>
     </div>
