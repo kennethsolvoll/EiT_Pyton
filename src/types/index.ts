@@ -4,12 +4,22 @@ export interface Persona {
   percentage: number
   description: string
   avatar: string
+  quote?: string
+  traits?: string[]
+  scores?: PersonaScore
 }
 
 export interface TeamMember {
   name: string
   role?: string
   avatar: string
+  description?: string
+}
+
+export interface PersonaScore {
+  openness: number        // Åpenhet for nytt (0–100)
+  sustainability: number  // Bærekraft-fokus (0–100)
+  changeReadiness: number // Endringspotensial (0–100)
 }
 
 export interface FindingCard {
