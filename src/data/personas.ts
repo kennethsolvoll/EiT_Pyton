@@ -8,6 +8,17 @@ export const personas: Persona[] = [
     description:
       'Forbinder slanger med reptiler og giftighet. Sosiale normer og følelsesmessig avsky overstyrer miljøargumenter, selv når bærekraftsgevinstene er dokumentert.',
     avatar: 'https://placehold.co/240x240/2d4a2d/f5f0e8?text=KH',
+    quote: '«Slanger er jo ikke mat. Det høres bare ekkelt ut.»',
+    traits: [
+      'Litt negativ holdning: forbinder slanger med gift og krypdyr',
+      'Lav eksotisk matvareerfaring; bryter med norske matnormer',
+      'Sosial norm og omdømme stopper før smak vurderes',
+    ],
+    scores: {
+      openness: 20,
+      sustainability: 35,
+      changeReadiness: 30,
+    },
   },
   {
     name: 'Lena Simensen',
@@ -16,5 +27,16 @@ export const personas: Persona[] = [
     description:
       'Rasjonell og datadrevet. Åpen for å prøve pytonkjøtt dersom forskning bekrefter at det er mer bærekraftig enn kylling og har sammenlignbar ernæringsprofil.',
     avatar: 'https://placehold.co/240x240/3d2b1f/f5f0e8?text=LS',
+    quote: '«Hvis forskning viser at det er mer bærekraftig enn kylling, vil jeg prøve!»',
+    traits: [
+      'Nøytral holdning — bestemmer seg på bakgrunn av fakta',
+      'Ville inkludert slange ved bevist bærekraft',
+      'Er miljøbevisst rasjonell og datadrevet',
+    ],
+    scores: {
+      openness: 92,
+      sustainability: 80,
+      changeReadiness: 90,
+    },
   },
 ]
