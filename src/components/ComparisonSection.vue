@@ -18,7 +18,11 @@ import { reveal } from '../composables/useReveal'
           Hvordan slår det ut på ressursbruken?
         </h2>
         <p class="mt-6 text-parchment/60 font-sans text-sm italic">
-          Plassholdertall — erstattes med publiserte forskningsdata.
+          Kilder: <br>
+          Mekonnen, M. M., & Hoekstra, A. Y. (2012). A Global Assessment of the Water Footprint of Farm Animal Products. Ecosystems. <br>
+          Poore, J., & Nemecek, T. (2018). Reducing food’s environmental impacts through producers and consumers. Science, 360(6392), 987-992. <br>
+          FCR = Feed Conversion Ratio. <br>
+          *Det finnes ikke eksakte tall for slangeutslipp, men de anses som svært lave sammenlignet med tradisjonelle husdyr.
         </p>
       </div>
 

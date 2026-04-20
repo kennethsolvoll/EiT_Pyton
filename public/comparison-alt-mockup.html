@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Comparison Alt — Table + Inline Bars</title>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --night: #1a2e1a;
+      --moss:  #2d4a2d;
+      --earth: #3d2b1f;
+      --p:     #f5f0e8;
+      --gold:  #c9a84c;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--night);
+      color: var(--p);
+      padding: 56px 48px;
+      line-height: 1.5;
+    }
+
+    .label  { text-transform: uppercase; letter-spacing: .3em; font-size: .7rem; color: var(--gold); margin-bottom: 6px; }
+    .heading { font-family: 'Fraunces', serif; font-size: 2rem; margin-bottom: 6px; }
+    .subtext { font-size: .8rem; color: rgba(245,240,232,.4); font-style: italic; margin-bottom: 40px; }
+
+    /* ─── TABLE ─── */
+    .ct {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    /* Header row */
+    .ct thead th {
+      padding: 0 16px 14px;
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .15em;
+      color: rgba(245,240,232,.45);
+      text-align: left;
+      border-bottom: 1px solid rgba(45,74,45,.5);
+    }
+    .ct thead th:first-child { padding-left: 20px; }
+    .ct thead th .icon { font-size: 1rem; display: block; margin-bottom: 3px; }
+
+    /* Body rows */
+    .ct tbody tr {
+      border-bottom: 1px solid rgba(45,74,45,.25);
+      transition: background .15s;
+    }
+    .ct tbody tr:last-child { border-bottom: none; }
+    .ct tbody tr:hover { background: rgba(45,74,45,.15); }
+
+    /* Highlight row */
+    .ct tbody tr.highlight {
+      background: rgba(201,168,76,.06);
+      border-bottom: 1px solid rgba(201,168,76,.2);
+    }
+    .ct tbody tr.highlight:hover { background: rgba(201,168,76,.1); }
+
+    /* Source cell */
+    .ct td {
+      padding: 18px 16px;
+      vertical-align: middle;
+    }
+    .ct td:first-child {
+      padding-left: 20px;
+      white-space: nowrap;
+    }
+    .source-name {
+      font-family: 'Fraunces', serif;
+      font-size: 1.15rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .highlight .source-name { color: var(--gold); }
+    .highlight-badge {
+      font-family: 'Inter', sans-serif;
+      font-size: .6rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: .1em;
+      background: rgba(201,168,76,.15);
+      border: 1px solid rgba(201,168,76,.35);
+      color: var(--gold);
+      border-radius: 4px;
+      padding: 2px 6px;
+    }
+
+    /* Metric cells */
+    .metric-cell {
+      min-width: 130px;
+    }
+    .metric-value {
+      font-family: 'Fraunces', serif;
+      font-size: 1.05rem;
+      color: var(--p);
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 5px;
+    }
+    .metric-unit {
+      font-family: 'Inter', sans-serif;
+      font-size: .7rem;
+      color: rgba(245,240,232,.45);
+    }
+    .bar-track {
+      height: 4px;
+      background: rgba(245,240,232,.08);
+      border-radius: 2px;
+      overflow: hidden;
+      width: 100%;
+    }
+    .bar-fill {
+      height: 100%;
+      border-radius: 2px;
+      background: rgba(245,240,232,.25);
+    }
+    .highlight .bar-fill { background: var(--gold); }
+
+    /* footnote */
+    .footnote {
+      margin-top: 20px;
+      font-size: .72rem;
+      color: rgba(245,240,232,.35);
+      font-style: italic;
+    }
+  </style>
+</head>
+<body>
+
+  <p class="label">Pyton vs. tradisjonelt</p>
+  <h2 class="heading">Hvordan slår det ut på ressursbruken?</h2>
+  <p class="subtext">Plassholdertall — erstattes med publiserte forskningsdata.</p>
+
+  <table class="ct" aria-label="Sammenligning av ressursbruk per proteinkilde">
+    <thead>
+      <tr>
+        <th scope="col"></th>
+        <th scope="col"><span class="icon" aria-hidden="true">💧</span>Vann</th>
+        <th scope="col"><span class="icon" aria-hidden="true">🌾</span>FCR</th>
+        <th scope="col"><span class="icon" aria-hidden="true">🏞️</span>Areal</th>
+        <th scope="col"><span class="icon" aria-hidden="true">💨</span>CO₂</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- PYTON (highlight) -->
+      <tr class="highlight">
+        <td>
+          <div class="source-name">
+            Pyton
+            <span class="highlight-badge">Lavest</span>
+          </div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">~0.3 <span class="metric-unit">L/g protein</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:2%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">4:1</div>
+          <div class="bar-track"><div class="bar-fill" style="width:16%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Lavt</div>
+          <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Lavt</div>
+          <div class="bar-track"><div class="bar-fill" style="width:25%"></div></div>
+        </td>
+      </tr>
+
+      <!-- KYLLING -->
+      <tr>
+        <td><div class="source-name">Kylling</div></td>
+        <td class="metric-cell">
+          <div class="metric-value">~4 <span class="metric-unit">L/g protein</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:27%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">2:1</div>
+          <div class="bar-track"><div class="bar-fill" style="width:8%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Middels</div>
+          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Middels</div>
+          <div class="bar-track"><div class="bar-fill" style="width:50%"></div></div>
+        </td>
+      </tr>
+
+      <!-- SVIN -->
+      <tr>
+        <td><div class="source-name">Svin</div></td>
+        <td class="metric-cell">
+          <div class="metric-value">~6 <span class="metric-unit">L/g protein</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:40%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">3:1</div>
+          <div class="bar-track"><div class="bar-fill" style="width:12%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Høyt</div>
+          <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Høyt</div>
+          <div class="bar-track"><div class="bar-fill" style="width:75%"></div></div>
+        </td>
+      </tr>
+
+      <!-- STORFE -->
+      <tr>
+        <td><div class="source-name">Storfe</div></td>
+        <td class="metric-cell">
+          <div class="metric-value">~15 <span class="metric-unit">L/g protein</span></div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">25:1</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Svært høyt</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </td>
+        <td class="metric-cell">
+          <div class="metric-value">Svært høyt</div>
+          <div class="bar-track"><div class="bar-fill" style="width:100%"></div></div>
+        </td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <p class="footnote">* Søylene viser relativ belastning — lengre søyle = høyere ressursbruk. Pyton er normalisert mot Storfe som referansepunkt.</p>
+
+</body>
+</html>

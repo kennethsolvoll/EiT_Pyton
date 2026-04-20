@@ -7,11 +7,14 @@ import { heroEntrance } from '../composables/useReveal'
     id="hero"
     class="relative min-h-screen flex items-center overflow-hidden"
   >
-    <div
-      class="absolute inset-0 bg-cover bg-center"
-      style="background-image: url('https://placehold.co/1920x1080/1a2e1a/0d170d?text=+');"
+    <video
+      class="absolute inset-0 w-full h-full object-cover scale-110"
+      style="filter: blur(8px);"
+      autoplay muted loop playsinline
       aria-hidden="true"
-    />
+    >
+    <source src="/videos/pythonvideo.mp4" type="video/mp4" />
+  </video>
     <div
       class="absolute inset-0 bg-gradient-to-b from-night-forest/70 via-night-forest/80 to-night-forest"
       aria-hidden="true"

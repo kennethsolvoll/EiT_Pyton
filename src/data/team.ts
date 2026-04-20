@@ -23,7 +23,7 @@ export const team: TeamMember[] = [
     description: 'Agnes studerer Ledelse av innovasjon og digital sikkerhet, og viser mye entusiasme for fremtidens mat.',
   },
   {
-    name: 'Hans Victor Lidsheim Abrahamsen',
+    name: 'Victor Lidsheim Abrahamsen',
     role: 'Pyton-entusiast',
     avatar: '/images/team/victor.jpg',
     description: 'Victor studerer Maskiningeniør og er svært aktiv i frivillig studentorganisasjoner som Revolve.',
