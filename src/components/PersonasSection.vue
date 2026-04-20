@@ -33,7 +33,7 @@ import { reveal } from '../composables/useReveal'
           <div class="flex items-center gap-4 mb-5">
             <img
               :src="persona.avatar"
-              :alt="persona.name"
+              :alt="`Profilbilde av ${persona.name}`"
               class="w-16 h-16 rounded-full object-cover border-2 border-gold/45 flex-shrink-0"
               loading="lazy"
             />
@@ -78,9 +78,16 @@ import { reveal } from '../composables/useReveal'
               <div class="flex flex-col gap-1.5">
                 <div class="flex justify-between font-sans text-xs text-parchment/55">
                   <span>Åpenhet for nytt</span>
-                  <span>{{ persona.scores.openness }} %</span>
+                  <span class="whitespace-nowrap">{{ persona.scores.openness }} %</span>
                 </div>
-                <div class="h-1.5 bg-parchment/10 rounded-full overflow-hidden">
+                <div
+                  class="h-1.5 bg-parchment/10 rounded-full overflow-hidden"
+                  role="progressbar"
+                  :aria-valuenow="persona.scores.openness"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  :aria-label="`Åpenhet for nytt: ${persona.scores.openness} %`"
+                >
                   <div
                     class="h-full bg-gold rounded-full"
                     :style="{ width: persona.scores.openness + '%' }"
@@ -90,9 +97,16 @@ import { reveal } from '../composables/useReveal'
               <div class="flex flex-col gap-1.5">
                 <div class="flex justify-between font-sans text-xs text-parchment/55">
                   <span>Bærekraft-fokus</span>
-                  <span>{{ persona.scores.sustainability }} %</span>
+                  <span class="whitespace-nowrap">{{ persona.scores.sustainability }} %</span>
                 </div>
-                <div class="h-1.5 bg-parchment/10 rounded-full overflow-hidden">
+                <div
+                  class="h-1.5 bg-parchment/10 rounded-full overflow-hidden"
+                  role="progressbar"
+                  :aria-valuenow="persona.scores.sustainability"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  :aria-label="`Bærekraft-fokus: ${persona.scores.sustainability} %`"
+                >
                   <div
                     class="h-full bg-gold rounded-full"
                     :style="{ width: persona.scores.sustainability + '%' }"
@@ -102,9 +116,16 @@ import { reveal } from '../composables/useReveal'
               <div class="flex flex-col gap-1.5">
                 <div class="flex justify-between font-sans text-xs text-parchment/55">
                   <span>Endringspotensial</span>
-                  <span>{{ persona.scores.changeReadiness }} %</span>
+                  <span class="whitespace-nowrap">{{ persona.scores.changeReadiness }} %</span>
                 </div>
-                <div class="h-1.5 bg-parchment/10 rounded-full overflow-hidden">
+                <div
+                  class="h-1.5 bg-parchment/10 rounded-full overflow-hidden"
+                  role="progressbar"
+                  :aria-valuenow="persona.scores.changeReadiness"
+                  aria-valuemin="0"
+                  aria-valuemax="100"
+                  :aria-label="`Endringspotensial: ${persona.scores.changeReadiness} %`"
+                >
                   <div
                     class="h-full bg-gold rounded-full"
                     :style="{ width: persona.scores.changeReadiness + '%' }"
