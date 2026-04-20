@@ -19,22 +19,25 @@ import { reveal } from '../composables/useReveal'
         </h2>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         <article
           v-for="(member, i) in team"
           :key="member.name"
           v-motion="reveal(i * 100)"
-          class="bg-night-forest/60 border border-moss/40 rounded-2xl p-6 flex flex-col items-center text-center"
+          class="bg-night-forest/60 border border-moss/40 rounded-2xl p-8 flex flex-col items-center text-center"
         >
           <img
             :src="member.avatar"
             :alt="member.name"
-            class="h-24 w-24 rounded-full object-cover border border-gold/40 mb-4"
+            class="w-40 h-40 rounded-full object-cover border-2 border-gold/40 mb-5"
             loading="lazy"
           />
           <h3 class="font-serif text-xl text-parchment mb-1">{{ member.name }}</h3>
-          <p v-if="member.role" class="text-parchment/60 font-sans text-sm">
+          <p v-if="member.role" class="text-parchment/55 font-sans text-sm mb-3">
             {{ member.role }}
+          </p>
+          <p v-if="member.description" class="text-parchment/70 font-sans text-sm leading-relaxed">
+            {{ member.description }}
           </p>
         </article>
       </div>
