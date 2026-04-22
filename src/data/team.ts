@@ -37,7 +37,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Mathias Johansen',
-    role: 'Same',
+    role: 'Overleaf-expert',
     avatar: assetUrl('images/team/mathias.png'),
     description: 'Mathias studerer Mekatronikk og automasjon, og han er glad i å reise.',
   },
