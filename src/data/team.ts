@@ -13,7 +13,7 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Kenneth Solvoll',
-    role: 'Ordstyrer',
+    role: 'Teamleder',
     avatar: assetUrl('images/team/kenneth.jpg'),
     description: 'Kenneth studerer Datateknologi: Programvaresystemer, mens han jobber fulltid som IT-konsulent.',
   },
