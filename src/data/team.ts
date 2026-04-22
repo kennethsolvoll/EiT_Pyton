@@ -25,9 +25,9 @@ export const team: TeamMember[] = [
   },
   {
     name: 'Victor Lidsheim Abrahamsen',
-    role: 'Pyton-entusiast',
+    role: 'Produktansvarlig',
     avatar: assetUrl('images/team/victor.jpg'),
-    description: 'Victor studerer Maskiningeniør og er svært aktiv i frivillig studentorganisasjoner som Revolve.',
+    description: 'Victor studerer Produktutvikling og Produksjon, og er svært aktiv i frivillig studentorganisasjoner som Revolve.',
   },
   {
     name: 'Oscar Willetts Gaup',
